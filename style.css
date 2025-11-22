@@ -364,6 +364,10 @@ article .icon {
   background: rgb(250, 250, 250);
 }
 
+img {
+  border-radius: 2rem;
+}
+
 .project-img {
   border-radius: 2rem;
   width: 90%;
