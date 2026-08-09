@@ -14,8 +14,7 @@
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#featured-writing">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -29,16 +28,15 @@
           <span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li><a  href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a  href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a  href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
     </nav>
     <section id="profile">
       <div class="section__pic-container">
-        <img src="/images/_Rhea_Patney (1).jpg" alt="Rhea Patney profile picture" />
+        <img src="/images/_Rhea_Patney (1).jpg" alt="Rhea Patney profile picture" style="border-radius:40px;"/>
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
@@ -49,19 +47,20 @@
             class="btn btn-color-2"
             onclick="window.open('./assets/resume-example.pdf')"
           >
-            Download CV
+            Resume
           </button>
           <button class="btn btn-color-1" onclick="location.href='./#contact'">
             Contact Info
           </button>
         </div>
         <div id="socials-container">
-          <img
-            src="/images/linkedin_icon.svg"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/rhea-patney-867380207/'"
-          />
+          <a target="_blank" href="https://www.linkedin.com/in/rhea-patney-867380207/">
+            <img
+              src="/images/linkedin_icon.svg"
+              alt="My LinkedIn profile"
+              class="icon"
+            />
+          </a>
         </div>
       </div>
     </section>
@@ -69,226 +68,120 @@
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
       <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
         <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.A. Bachelors Degree<br />M.Sc. Masters Degree</p>
-            </div>
-          </div>
+          <img src="/images/Graduation-1.jpg" class="about_image"/>
           <div class="text-container">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-              reprehenderit et laborum, rem, dolore eum quod voluptate
-              exercitationem nobis, nihil esse debitis maxime facere minus sint
-              delectus velit in eos quo officiis explicabo deleniti dignissimos.
-              Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-              reiciendis ea magnam? Nulla, impedit fuga!
+             I’m a journalist and incoming Master of Health Administration candidate at Johns Hopkins University, with a background in news and science writing and a particular interest in the people behind complex stories. My work currently sits at the intersection of women’s sports, health, and culture, where I’m interested in the systems that shape athletes’ experiences, the people building women’s sports, and the stories that extend beyond the box score.
+             <br><br>I’m primarily a feature writer, drawn to people: what motivates them, what they’ve overcome, what they care about, and how their experiences connect to something bigger. I also have a special place in my heart for basketball and ultimate frisbee, where my work spans game previews, recaps, analysis, player profiles, and other game-day coverage.
+             <br><br>Whether I’m reporting on healthcare, science, business, or sports, I love asking good questions, listening closely, and finding the human story within the subject. I’m currently available for freelance assignments in healthcare, business, science, and sports.
             </p>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
+      
     </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>SASS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Material UI</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-      <button class="btn btn-color-1 center" onclick="location.href='/projects.html'">
-            All Projects
-          </button>
-    </section>
+<section id="featured-writing">
+  <p class="section__text__p1">Selected Work</p>
+  <h1 class="title">Featured Writing</h1>
+
+  <!-- Featured grid -->
+  <div class="featured-writing">
+<a target="_blank" href="https://www.voiceinsport.com/post/news/mika-kurahashi-and-building-the-future-of-womens-ultimate" class="card" data-category="features, sports" data-date="2026-6-18"> 
+  <img src="https://images.ctfassets.net/xqwrisc54mjr/OZbYMge7rQ2N23Dl8wBGF/12362dc6c88789294ae9f3baf53f9986/1__28_.png?fm=jpg&q=70" alt="Mika Kurahashi"/>
+
+  <div class="card-content">
+    <p class="kicker">Women's Ultimate</p>
+
+    <h3 class="headline">
+      Mika Kurahashi and Building the Future of Women's Ultimate
+    </h3>
+
+    <p class="dek">
+      From a teenager watching ultimate highlights in math class to becoming the first Canadian woman to win the Callahan Award, Mika Kurahashi reflects on leadership, adversity, coaching, social media, and growing women's ultimate frisbee.
+    </p>
+
+    <div class="meta">
+      <span>VOICEINSPORT</span>
+      <span>June 18, 2026</span>
+    </div>
+  </div>
+</a>
+
+<a target="_blank" href="https://vanderbilthustler.com/2026/01/20/jordyn-oliver-from-the-court-to-the-clipboard/" class="card" data-category="sports, features" data-date="2026-1-20"> 
+  <img src="https://vanderbilthustler.com/wp-content/uploads/2026/01/Jordyn-Oliver.png" alt="Vandy WBB"/>
+
+  <div class="card-content">
+    <p class="kicker">Women's Basketball</p>
+
+    <h3 class="headline">
+      Jordyn Oliver: From the court to the clipboard
+    </h3>
+
+    <p class="dek">
+      Oliver got a job as director of player development just an hour after her playing career ended, bringing leadership, perspective and a player’s insight to every corner of the program.
+    </p>
+
+    <div class="meta">
+      <span>The Vanderbilt Hustler</span>
+      <span>January 20, 2026</span>
+    </div>
+  </div>
+</a>
+<a target="_blank" href="https://www.voiceinsport.com/post/body/ty-harris-rest-is-still-work" class="card" data-category="sports, features" data-date="2026-3-17"> 
+  <img src="https://images.ctfassets.net/xqwrisc54mjr/YyRok06kXSUeaCzuCRPnH/5714496f9f24feba4f16d54af29168b7/MIA_SOCIAL_MEDIA_TEMPLATES__Presentation_.png?fm=jpg&q=70" alt="Ty Harris"/>
+
+  <div class="card-content">
+    <p class="kicker">Women's Basketball</p>
+
+    <h3 class="headline">
+      Ty Harris - “Rest is Still Work”
+    </h3>
+
+    <p class="dek">
+      After a season-ending injury, WNBA guard and VIS Mentor Ty Harris had to rethink what productivity meant. Through rehab, patience, and perspective, she learned that healing is part of the work and that rest shouldn’t come with guilt.
+    </p>
+
+    <div class="meta">
+      <span>VOICEINSPORT</span>
+      <span>March 17, 2026</span>
+    </div>
+  </div>
+</a>
+<a target="_blank" href="https://vanderbilthustler.com/2026/02/23/ndjakalenga-mwenentanda-a-gift-of-luck/" class="card" data-category="sports, features" data-date="2026-2-23"> 
+  <img src="https://vanderbilthustler.com/wp-content/uploads/2026/02/Ndjakalenga-Mwenentanda-2.png" alt="Vandy Wbb"/>
+
+  <div class="card-content">
+    <p class="kicker">Women's Basketball</p>
+
+    <h3 class="headline">
+      Ndjakalenga Mwenentanda: A gift of luck
+    </h3>
+
+    <p class="dek">
+      With Final Four experience and a defense-first mindset, Ndjakalenga Mwenentanda has brought veteran stability to No. 5 Vanderbilt.
+    </p>
+
+    <div class="meta">
+      <span>The Vanderbilt Hustler</span>
+      <span>February 23, 2026</span>
+    </div>
+  </div>
+</a>
+  </div>
+
+  <!-- Editor's note -->
+  <p class="editor-note">
+    <strong>Editor’s note:</strong> These pieces represent my strongest feature writing and reporting, with a focus on women’s sports, health, culture and the people at the heart of complex stories.
+  </p>
+
+<button class="btn btn-color-1 center" onclick="window.open('/projects.html', '_blank')">
+  View all writing
+</button>
+</section>
+
+ 
+
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
@@ -299,7 +192,7 @@
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:rpatney44@gmail.com">rpatney44@gmail.com</a></p>
+          <p><a target="_blank" href="mailto:rheapatney@gmail.com">rheapatney@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
           <img
@@ -307,7 +200,7 @@
             alt="LinkedIn icon"
             class="icon contact-icon"
           />
-          <p><a href="https://www.linkedin.com/in/rhea-patney-867380207/">LinkedIn</a></p>
+          <p><a target="_blank" href="https://www.linkedin.com/in/rhea-patney-867380207/">LinkedIn</a></p>
         </div>
       </div>
     </section>
@@ -315,14 +208,13 @@
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a  href="#about">About</a></li>
+            <li><a  href="#projects">Projects</a></li>
+            <li><a  href="#contact">Contact</a></li>
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2025 Rhea Patney. All Rights Reserved.</p>
+      <p>Copyright &#169; 2026 Rhea Patney. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
   </body>
