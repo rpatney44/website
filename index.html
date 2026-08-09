@@ -1,18 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="icon" type="image/x-icon" href="/images/RP.png">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Rhea Patney</div>
-      <div>
+
+<head>
+  <link rel="icon" type="image/x-icon" href="/images/RP.png">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+
+<body>
+  <nav id="desktop-nav">
+    <div class="logo">Rhea Patney</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#featured-writing">Featured</a></li>
+        <li><a href="/projects.html">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo">Rhea Patney</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#featured-writing" onclick="toggleMenu()">Featured</a></li>
+        <li><a href="/projects.html" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="section__pic-container">
+      <img src="/images/_Rhea_Patney (1).jpg" alt="Rhea Patney profile picture" style="border-radius:40px;" />
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">Rhea Patney</h1>
+      <p class="section__text__p2">Writer</p>
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">
+          Resume
+        </button>
+        <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          Contact Info
+        </button>
+      </div>
+      <div id="socials-container">
+        <a target="_blank" href="https://www.linkedin.com/in/rhea-patney-867380207/">
+          <img src="/images/linkedin_icon.svg" alt="My LinkedIn profile" class="icon" />
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+      <div class="about-details-container">
+        <div class="about-media">
+          <img src="/images/Graduation-1.jpg" class="about_image" alt="Rhea Patney at graduation" />
+
+          <div class="about-education">
+            <div class="about-education__item">
+              <span class="about-education__degree">Master of Health Administration</span>
+              <span class="about-education__school">Johns Hopkins University</span>
+              <span class="about-education__date">May 2028</span>
+            </div>
+            <div class="about-education__item">
+              <span class="about-education__degree">BA, Public Health &amp; Science Communication</span>
+              <span class="about-education__school">Vanderbilt University</span>
+              <span class="about-education__date">May 2026</span>
+            </div>
+          </div>
+
+          <div class="about-publications">
+            <div class="about-publications__logos">
+              <a href="https://www.voiceinsport.com/" target="_blank"><img src="/images/VIS.jpeg"
+                  alt="VoiceInSport" /></a>
+              <a href="https://ultiworld.com/" target="_blank"><img src="/images/Ultiworld.png" alt="Ultiworld" /></a>
+              <a href="https://vanderbilthustler.com/" target="_blank"><img src="/images/Hustler.png"
+                  alt="The Vanderbilt Hustler" /></a>
+              <a href="https://www.healthandenvironment.org/" target="_blank"><img src="/images/che.jpeg"
+                  alt="Publication logo" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>
+            I’m a journalist with a background in news and science writing and a particular interest in the people
+            behind complex stories. My work currently sits at the intersection of women’s sports, health, and culture,
+            where I’m interested in the systems that shape athletes’ experiences, the people building women’s sports,
+            and the stories that extend beyond the box score.
+            <br><br>I’m primarily a feature writer, drawn to people: what motivates them, what they’ve overcome, what
+            they care about, and how their experiences connect to something bigger. I also have a special place in my
+            heart for basketball and ultimate frisbee, where my work spans game previews, recaps, analysis, player
+            profiles, and other game-day coverage.
+            <br><br>Whether I’m reporting on healthcare, science, business, or sports, I love asking good questions,
+            listening closely, and finding the human story within the subject. I’m currently available for freelance
+            assignments in healthcare, business, science, and sports.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="featured-writing">
+    <p class="section__text__p1">Selected Work</p>
+    <h1 class="title">Featured Writing</h1>
+
+    <!-- Featured grid -->
+    <div class="featured-writing">
+      <a target="_blank"
+        href="https://www.voiceinsport.com/post/news/mika-kurahashi-and-building-the-future-of-womens-ultimate"
+        class="card" data-category="features, sports" data-date="2026-6-18">
+        <img
+          src="https://images.ctfassets.net/xqwrisc54mjr/OZbYMge7rQ2N23Dl8wBGF/12362dc6c88789294ae9f3baf53f9986/1__28_.png?fm=jpg&q=70"
+          alt="Mika Kurahashi" />
+
+        <div class="card-content">
+          <p class="kicker">Women's Ultimate</p>
+
+          <h3 class="headline">
+            Mika Kurahashi and Building the Future of Women's Ultimate
+          </h3>
+
+          <p class="dek">
+            From a teenager watching ultimate highlights in math class to becoming the first Canadian woman to win the
+            Callahan Award, Mika Kurahashi reflects on leadership, adversity, coaching, social media, and growing
+            women's ultimate frisbee.
+          </p>
+
+          <div class="meta">
+            <span>VOICEINSPORT</span>
+            <span>June 18, 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a target="_blank" href="https://vanderbilthustler.com/2026/01/20/jordyn-oliver-from-the-court-to-the-clipboard/"
+        class="card" data-category="sports, features" data-date="2026-1-20">
+        <img src="https://vanderbilthustler.com/wp-content/uploads/2026/01/Jordyn-Oliver.png" alt="Vandy WBB" />
+
+        <div class="card-content">
+          <p class="kicker">Women's Basketball</p>
+
+          <h3 class="headline">
+            Jordyn Oliver: From the court to the clipboard
+          </h3>
+
+          <p class="dek">
+            Oliver got a job as director of player development just an hour after her playing career ended, bringing
+            leadership, perspective and a player’s insight to every corner of the program.
+          </p>
+
+          <div class="meta">
+            <span>The Vanderbilt Hustler</span>
+            <span>January 20, 2026</span>
+          </div>
+        </div>
+      </a>
+      <a target="_blank" href="/PDFs/Hormonal IUDs and RED-S.pdf" class="card" data-category="science"
+        data-date="2025-9-3">
+        <img
+          src="https://images.ctfassets.net/xqwrisc54mjr/6VoGPEUtESBMGTa9pvcZtq/71ceac9a896e8b8f744698868d948572/aHR0cHM6Ly9jZG4uZGFzaHNvY2lhbC5jb20vbWVkaWEvZnVsbC8xNzU2OTA4OTM4Ljc4MTM3NDk5ODguanBlZw__.webp?fm=jpg&q=70"
+          alt="IUDs" />
+
+        <div class="card-content">
+          <p class="kicker">Hormones</p>
+
+          <h3 class="headline">
+            Hormonal IUDs and RED-S
+          </h3>
+
+          <p class="dek">
+            Menstrual health is crucial for athletic performance, but hormonal IUDs can alter menstrual patterns, making
+            it difficult for us to assess our health. VIS Expert Chimsom Oleka, MD, discusses the impact of hormonal
+            IUDs and shares insights on recognizing signs of Relative Energy Deficiency in Sports (RED-S).
+          </p>
+
+          <div class="meta">
+            <span>VOICEINSPORT</span>
+            <span>September 3, 2025</span>
+          </div>
+        </div>
+      </a>
+      <a target="_blank"
+        href="https://vanderbilthustler.com/2025/06/23/wondry-moves-into-school-of-engineering-10-staff-members-laid-off/"
+        class="card" data-category="news" data-date="2025-6-1">
+        <img src="https://vanderbilthustler.com/wp-content/uploads/2025/06/ESB2025.01.19AT-4-1200x800.jpg"
+          alt="Wond'ry" />
+
+        <div class="card-content">
+          <p class="kicker">Campus News</p>
+
+          <h3 class="headline">
+            Wond’ry moves into School of Engineering, 10 staff members laid off
+          </h3>
+
+          <p class="dek">
+            Executive Director David Owens cited a desire for curricular programming and extended focus on innovation as
+            reasons for transition.
+          </p>
+
+          <div class="meta">
+            <span>The Vanderbilt Hustler</span>
+            <span>June 23, 2025</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Editor's note -->
+    <p class="editor-note">
+      <strong>Editor’s note:</strong> These pieces represent my strongest feature writing and reporting, with a focus on
+      women’s sports, health, culture and the people at the heart of complex stories.
+    </p>
+
+    <button class="btn btn-color-1 center" onclick="window.open('/projects.html', '_blank')">
+      View all writing
+    </button>
+  </section>
+
+
+
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="/images/email.svg" alt="Email icon" class="icon contact-icon email-icon" />
+        <p><a target="_blank" href="mailto:rheapatney@gmail.com">rheapatney@gmail.com</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="/images/linkedin_icon.svg" alt="LinkedIn icon" class="icon contact-icon" />
+        <p><a target="_blank" href="https://www.linkedin.com/in/rhea-patney-867380207/">LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <nav>
+      <div class="nav-links-container">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#featured-writing">Featured</a></li>
@@ -21,212 +258,9 @@
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Rhea Patney</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a  href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a  href="#featured-writing" onclick="toggleMenu()">Featured</a></li>
-          <li><a  href="/projects.html" onclick="toggleMenu()">Projects</a></li>
-          <li><a  href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="/images/_Rhea_Patney (1).jpg" alt="Rhea Patney profile picture" style="border-radius:40px;"/>
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Rhea Patney</h1>
-        <p class="section__text__p2">Writer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
-          >
-            Resume
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <a target="_blank" href="https://www.linkedin.com/in/rhea-patney-867380207/">
-            <img
-              src="/images/linkedin_icon.svg"
-              alt="My LinkedIn profile"
-              class="icon"
-            />
-          </a>
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="about-details-container">
-          <div>
-            <img src="/images/Graduation-1.jpg" class="about_image"/>
-            <p>Master of Health Administration. Johns Hopkins University. May 2028. BA, Public Health and Science Communication. Vanderbilt University. May 2026.</p>
-            <img />
-            <img />
-            <img />
-            <img />
-          </div>
-          <div class="text-container">
-            <p>
-             I’m a journalist with a background in news and science writing and a particular interest in the people behind complex stories. My work currently sits at the intersection of women’s sports, health, and culture, where I’m interested in the systems that shape athletes’ experiences, the people building women’s sports, and the stories that extend beyond the box score.
-             <br><br>I’m primarily a feature writer, drawn to people: what motivates them, what they’ve overcome, what they care about, and how their experiences connect to something bigger. I also have a special place in my heart for basketball and ultimate frisbee, where my work spans game previews, recaps, analysis, player profiles, and other game-day coverage.
-             <br><br>Whether I’m reporting on healthcare, science, business, or sports, I love asking good questions, listening closely, and finding the human story within the subject. I’m currently available for freelance assignments in healthcare, business, science, and sports.
-            </p>
-          </div>
-        </div>
-      </div>
-      
-    </section>
-<section id="featured-writing">
-  <p class="section__text__p1">Selected Work</p>
-  <h1 class="title">Featured Writing</h1>
+    <p>Copyright &#169; 2026 Rhea Patney. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
 
-  <!-- Featured grid -->
-  <div class="featured-writing">
-<a target="_blank" href="https://www.voiceinsport.com/post/news/mika-kurahashi-and-building-the-future-of-womens-ultimate" class="card" data-category="features, sports" data-date="2026-6-18"> 
-  <img src="https://images.ctfassets.net/xqwrisc54mjr/OZbYMge7rQ2N23Dl8wBGF/12362dc6c88789294ae9f3baf53f9986/1__28_.png?fm=jpg&q=70" alt="Mika Kurahashi"/>
-
-  <div class="card-content">
-    <p class="kicker">Women's Ultimate</p>
-
-    <h3 class="headline">
-      Mika Kurahashi and Building the Future of Women's Ultimate
-    </h3>
-
-    <p class="dek">
-      From a teenager watching ultimate highlights in math class to becoming the first Canadian woman to win the Callahan Award, Mika Kurahashi reflects on leadership, adversity, coaching, social media, and growing women's ultimate frisbee.
-    </p>
-
-    <div class="meta">
-      <span>VOICEINSPORT</span>
-      <span>June 18, 2026</span>
-    </div>
-  </div>
-</a>
-
-<a target="_blank" href="https://vanderbilthustler.com/2026/01/20/jordyn-oliver-from-the-court-to-the-clipboard/" class="card" data-category="sports, features" data-date="2026-1-20"> 
-  <img src="https://vanderbilthustler.com/wp-content/uploads/2026/01/Jordyn-Oliver.png" alt="Vandy WBB"/>
-
-  <div class="card-content">
-    <p class="kicker">Women's Basketball</p>
-
-    <h3 class="headline">
-      Jordyn Oliver: From the court to the clipboard
-    </h3>
-
-    <p class="dek">
-      Oliver got a job as director of player development just an hour after her playing career ended, bringing leadership, perspective and a player’s insight to every corner of the program.
-    </p>
-
-    <div class="meta">
-      <span>The Vanderbilt Hustler</span>
-      <span>January 20, 2026</span>
-    </div>
-  </div>
-</a>
-<a target="_blank" href="/PDFs/Hormonal IUDs and RED-S.pdf" class="card" data-category="science" data-date="2025-9-3"> 
-  <img src="https://images.ctfassets.net/xqwrisc54mjr/6VoGPEUtESBMGTa9pvcZtq/71ceac9a896e8b8f744698868d948572/aHR0cHM6Ly9jZG4uZGFzaHNvY2lhbC5jb20vbWVkaWEvZnVsbC8xNzU2OTA4OTM4Ljc4MTM3NDk5ODguanBlZw__.webp?fm=jpg&q=70" alt="IUDs"/>
-
-  <div class="card-content">
-    <p class="kicker">Hormones</p>
-
-    <h3 class="headline">
-      Hormonal IUDs and RED-S
-    </h3>
-
-    <p class="dek">
-      Menstrual health is crucial for athletic performance, but hormonal IUDs can alter menstrual patterns, making it difficult for us to assess our health. VIS Expert Chimsom Oleka, MD, discusses the impact of hormonal IUDs and shares insights on recognizing signs of Relative Energy Deficiency in Sports (RED-S).
-    </p>
-
-    <div class="meta">
-      <span>VOICEINSPORT</span>
-      <span>September 3, 2025</span>
-    </div>
-  </div>
-</a>
-<a target="_blank" href="https://vanderbilthustler.com/2025/06/23/wondry-moves-into-school-of-engineering-10-staff-members-laid-off/" class="card" data-category="news" data-date="2025-6-1"> 
-  <img src="https://vanderbilthustler.com/wp-content/uploads/2025/06/ESB2025.01.19AT-4-1200x800.jpg" alt="Wond'ry"/>
-
-  <div class="card-content">
-    <p class="kicker">Campus News</p>
-
-    <h3 class="headline">
-      Wond’ry moves into School of Engineering, 10 staff members laid off
-    </h3>
-
-    <p class="dek">
-      Executive Director David Owens cited a desire for curricular programming and extended focus on innovation as reasons for transition.
-    </p>
-
-    <div class="meta">
-      <span>The Vanderbilt Hustler</span>
-      <span>June 23, 2025</span>
-    </div>
-  </div>
-</a>
-  </div>
-
-  <!-- Editor's note -->
-  <p class="editor-note">
-    <strong>Editor’s note:</strong> These pieces represent my strongest feature writing and reporting, with a focus on women’s sports, health, culture and the people at the heart of complex stories.
-  </p>
-
-<button class="btn btn-color-1 center" onclick="window.open('/projects.html', '_blank')">
-  View all writing
-</button>
-</section>
-
- 
-
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="/images/email.svg"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a target="_blank" href="mailto:rheapatney@gmail.com">rheapatney@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="/images/linkedin_icon.svg"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a target="_blank" href="https://www.linkedin.com/in/rhea-patney-867380207/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#featured-writing">Featured</a></li>
-          <li><a href="/projects.html">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2026 Rhea Patney. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
 </html>
