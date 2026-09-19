@@ -90,7 +90,8 @@ footer {
 }
 
 /* GRID LAYOUT */
-.container {
+.container,
+.featured-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
@@ -181,19 +182,22 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 1200px) {
-  .container {
+  .container,
+  .featured-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 900px) {
-  .container {
+  .container,
+  .featured-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .container {
+  .container,
+  .featured-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -241,4 +245,15 @@ footer {
 .filter-btn:focus {
   outline: 3px solid #000;
   outline-offset: 2px;
+}
+
+/* FEATURED SECTION */
+.featured {
+  margin-bottom: 2rem;
+}
+
+.featured-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
 }

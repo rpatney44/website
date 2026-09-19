@@ -442,9 +442,16 @@ article .icon {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
+}
+
+/* Give the featured grid more horizontal room than the default 10rem section margin */
+@media (min-width: 1201px) {
+  #featured-writing {
+    margin: 0 4rem;
+  }
 }
 
 /* CARD STYLE */
@@ -522,13 +529,8 @@ article .icon {
 }
 
 /* RESPONSIVE */
+/* 4 cards: go straight from 4 columns to 2 so rows never split 3 + 1 */
 @media (max-width: 1200px) {
-  .featured-writing {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
   .featured-writing {
     grid-template-columns: repeat(2, 1fr);
   }

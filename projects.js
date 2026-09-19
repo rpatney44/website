@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterButtons = document.querySelectorAll(".filter-btn");
 
   // Grab all article cards
-  const cards = document.querySelectorAll(".card");
+  const cards = container.querySelectorAll(".card");
 
   // Helper function: show/hide cards based on selected category
   function filterCards(category) {
