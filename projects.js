@@ -30,12 +30,61 @@ document.addEventListener("DOMContentLoaded", () => {
       // - the card includes the selected category
       // (no category selected yet: hide everything)
       if (category && (category === "all" || cardCategories.includes(category))) {
-        card.style.display = "flex";
+        card.style.display = "";   // back to whatever the stylesheet says
       } else {
         card.style.display = "none";
       }
     });
   }
+
+  // Helper function: widen a few cards to two columns so the visible cards
+  // add up to whole rows — no single card stranded on the last row
+  function fillRows(grid) {
+    const gridCards = Array.from(grid.querySelectorAll(".card"));
+
+    // Start from scratch, so we measure what the filter actually left showing
+    gridCards.forEach((card) => card.classList.remove("wide"));
+
+    const visible = gridCards.filter((card) => card.style.display !== "none");
+
+    // The computed value lists one track per column, e.g. "272px 272px 272px"
+    const tracks = getComputedStyle(grid).gridTemplateColumns;
+    if (!tracks || tracks === "none") return;
+    const columns = tracks.split(" ").length;
+
+    // One column: everything is a full row already, and a span would overflow
+    if (columns < 2 || visible.length === 0) return;
+
+    const leftover = visible.length % columns;
+    if (leftover === 0) return;
+
+    // Each widened card takes one extra cell; this many fills the last row
+    const extra = columns - leftover;
+
+    // Spread them through the deck, but keep them out of the final row so
+    // dense packing always has a narrow card left over to backfill the gap
+    const range = Math.max(visible.length - columns, extra);
+    for (let i = 0; i < extra; i++) {
+      const index = Math.min(
+        Math.floor(((i + 0.5) * range) / extra),
+        visible.length - 1
+      );
+      visible[index].classList.add("wide");
+    }
+  }
+
+  const grids = document.querySelectorAll(".container, .featured-grid");
+
+  function fillAllGrids() {
+    grids.forEach(fillRows);
+  }
+
+  // The column count changes with the window, so recompute as it resizes
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(fillAllGrids, 150);
+  });
 
   // Helper function: update active button styles
   function updateActiveButton(category) {
@@ -64,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const category = button.dataset.category;
 
       filterCards(category);        // Filter visible cards
+      fillAllGrids();               // Widen cards to complete the last row
       updateActiveButton(category); // Highlight active button
       updateURL(category);          // Save filter in URL
     });
@@ -77,5 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Nothing is shown until the reader picks a category
   // (or the URL already named one)
   filterCards(initialCategory);
+  fillAllGrids();
   updateActiveButton(initialCategory);
 });

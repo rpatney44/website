@@ -97,12 +97,14 @@ footer {
 
 
 /* GRID LAYOUT */
-/* Columns are sized by the available width, so every card in a row is
-   exactly the same size no matter how many articles are showing. */
+/* Columns are sized by the available width. A few cards are widened to
+   span two columns (see fillRows in projects.js) so the cells always add
+   up to whole rows; `dense` lets later cards backfill any gap that leaves. */
 .container,
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  grid-auto-flow: row dense;
   gap: 1.5rem;
 
   max-width: 1200px;
@@ -126,6 +128,20 @@ footer {
 .card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
+}
+
+/* WIDE CARD: fills two columns, so its image is twice as wide and
+   the card still stands as tall as its neighbours in the row */
+.card.wide {
+  grid-column: span 2;
+}
+
+.card.wide img {
+  aspect-ratio: 3 / 1;
+}
+
+.card.wide .headline {
+  font-size: 1.15rem;
 }
 
 /* IMAGE */
@@ -190,14 +206,22 @@ footer {
 }
 
 /* RESPONSIVE */
-/* The auto-fill grid above already reflows at every width, so the only
-   breakpoint left just tightens the outer padding on phones. */
+/* The auto-fill grid above already reflows at every width, so this
+   breakpoint just tightens the padding and drops the two-column spans. */
 @media (max-width: 600px) {
 
   .container,
   .featured-grid {
     padding: 1.25rem;
     gap: 1.25rem;
+  }
+
+  .card.wide {
+    grid-column: auto;
+  }
+
+  .card.wide img {
+    aspect-ratio: 3 / 2;
   }
 }
 
