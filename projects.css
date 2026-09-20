@@ -97,19 +97,23 @@ footer {
 
 
 /* GRID LAYOUT */
-/* Columns are sized by the available width. A few cards are widened to
-   span two columns (see fillRows in projects.js) so the cells always add
-   up to whole rows; `dense` lets later cards backfill any gap that leaves. */
+/* Columns are sized by the available width. In the featured grid a few cards
+   are widened to span two columns (see fillRows in projects.js) so the cells
+   always add up to whole rows; `dense` lets later cards backfill any gap that
+   leaves. The deck below is a plain grid — every card is one column wide. */
 .container,
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
-  grid-auto-flow: row dense;
   gap: 1.5rem;
 
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+.featured-grid {
+  grid-auto-flow: row dense;
 }
 
 /* CARD STYLE */

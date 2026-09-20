@@ -37,15 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Helper function: widen a few cards to two columns so the visible cards
-  // add up to whole rows — no single card stranded on the last row
+  // Helper function: widen a few featured cards to two columns so they add
+  // up to whole rows — no single card stranded on the last row.
+  // Only the featured grid does this; the filtered deck below stays uniform.
   function fillRows(grid) {
     const gridCards = Array.from(grid.querySelectorAll(".card"));
 
-    // Start from scratch, so we measure what the filter actually left showing
+    // Start from scratch, so we measure against the current column count
     gridCards.forEach((card) => card.classList.remove("wide"));
-
-    const visible = gridCards.filter((card) => card.style.display !== "none");
 
     // The computed value lists one track per column, e.g. "272px 272px 272px"
     const tracks = getComputedStyle(grid).gridTemplateColumns;
@@ -53,9 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const columns = tracks.split(" ").length;
 
     // One column: everything is a full row already, and a span would overflow
-    if (columns < 2 || visible.length === 0) return;
+    if (columns < 2 || gridCards.length === 0) return;
 
-    const leftover = visible.length % columns;
+    const leftover = gridCards.length % columns;
     if (leftover === 0) return;
 
     // Each widened card takes one extra cell; this many fills the last row
@@ -63,27 +62,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Spread them through the deck, but keep them out of the final row so
     // dense packing always has a narrow card left over to backfill the gap
-    const range = Math.max(visible.length - columns, extra);
+    const range = Math.max(gridCards.length - columns, extra);
     for (let i = 0; i < extra; i++) {
       const index = Math.min(
         Math.floor(((i + 0.5) * range) / extra),
-        visible.length - 1
+        gridCards.length - 1
       );
-      visible[index].classList.add("wide");
+      gridCards[index].classList.add("wide");
     }
   }
 
-  const grids = document.querySelectorAll(".container, .featured-grid");
+  const featuredGrids = document.querySelectorAll(".featured-grid");
 
-  function fillAllGrids() {
-    grids.forEach(fillRows);
+  function fillFeatured() {
+    featuredGrids.forEach(fillRows);
   }
 
   // The column count changes with the window, so recompute as it resizes
   let resizeTimer;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(fillAllGrids, 150);
+    resizeTimer = setTimeout(fillFeatured, 150);
   });
 
   // Helper function: update active button styles
@@ -99,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Helper function: update URL without reloading the page
   function updateURL(category) {
     const url = new URL(window.location);
-    if (category === "all") {
+    if (!category || category === "all") {
       url.searchParams.delete("category");
     } else {
       url.searchParams.set("category", category);
@@ -110,10 +109,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Handle button clicks
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const category = button.dataset.category;
+      // Clicking the button that's already on turns the filter off again
+      const category = button.classList.contains("active")
+        ? undefined
+        : button.dataset.category;
 
       filterCards(category);        // Filter visible cards
-      fillAllGrids();               // Widen cards to complete the last row
       updateActiveButton(category); // Highlight active button
       updateURL(category);          // Save filter in URL
     });
@@ -127,6 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Nothing is shown until the reader picks a category
   // (or the URL already named one)
   filterCards(initialCategory);
-  fillAllGrids();
   updateActiveButton(initialCategory);
+
+  // Featured cards are never filtered, so this only needs the initial pass
+  fillFeatured();
 });
