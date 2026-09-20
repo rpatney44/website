@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Show card if:
       // - "all" is selected OR
       // - the card includes the selected category
-      if (category === "all" || cardCategories.includes(category)) {
+      // (no category selected yet: hide everything)
+      if (category && (category === "all" || cardCategories.includes(category))) {
         card.style.display = "flex";
       } else {
         card.style.display = "none";
@@ -70,9 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // On page load: check if URL already has a category
   const params = new URLSearchParams(window.location.search);
-  const initialCategory = params.get("category") || "all";
+  // undefined when the URL doesn't name one
+  const initialCategory = params.get("category") ?? undefined;
 
-  // Apply the filter from the URL
+  // Nothing is shown until the reader picks a category
+  // (or the URL already named one)
   filterCards(initialCategory);
   updateActiveButton(initialCategory);
 });
