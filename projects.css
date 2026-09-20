@@ -116,6 +116,15 @@ footer {
   grid-auto-flow: row dense;
 }
 
+/* The deck is the positioning parent for cards that are fading out (they get
+   pinned over it while the rest reflow — see floatOut in projects.js), and
+   `align-content: start` keeps the rows their natural height while the
+   container's own height is being animated between two row counts. */
+.container {
+  position: relative;
+  align-content: start;
+}
+
 /* CARD STYLE */
 .card {
   display: flex;
@@ -126,12 +135,34 @@ footer {
 
   background: #fff;
   border: 1px solid #e5e5e5;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.3s ease, box-shadow 0.2s ease, transform 0.25s ease;
 }
 
 .card:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
+}
+
+/* FILTER ANIMATION
+   The two states a card passes through when the filter changes: `entering`
+   is the start of the fade in, `leaving` the end of the fade out. Both must
+   come after :hover so they win while the card is animating. */
+.card.entering,
+.card.leaving {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .card,
+  .card.entering,
+  .card.leaving {
+    opacity: 1;
+    transform: none;
+    transition: box-shadow 0.2s ease;
+  }
 }
 
 /* WIDE CARD: fills two columns, so its image is twice as wide and
